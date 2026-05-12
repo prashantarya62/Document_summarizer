@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+downloads/
+reports/
+token.json
+.env
+credentials.json

@@ -1,0 +1,46 @@
+import fitz
+from docx import Document
+
+
+def extract_pdf_text(file_path):
+
+    text = ""
+
+    pdf = fitz.open(file_path)
+
+    for page in pdf:
+        text += page.get_text()
+
+    return text
+
+
+def extract_docx_text(file_path):
+
+    doc = Document(file_path)
+
+    text = "\n".join(
+        [paragraph.text for paragraph in doc.paragraphs]
+    )
+
+    return text
+
+
+def extract_txt_text(file_path):
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        return file.read()
+
+
+def parse_document(file_path):
+
+    if file_path.endswith(".pdf"):
+        return extract_pdf_text(file_path)
+
+    elif file_path.endswith(".docx"):
+        return extract_docx_text(file_path)
+
+    elif file_path.endswith(".txt"):
+        return extract_txt_text(file_path)
+
+    else:
+        return "Unsupported file type"
