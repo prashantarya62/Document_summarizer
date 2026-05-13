@@ -54,7 +54,12 @@ Gen_AI_Assignment/
 │
 └── README.md
 
+```
+
+---
+
 # Setup Instructions
+---
 
 ## 1. Clone Repository
 
@@ -354,22 +359,12 @@ uvicorn app:app --reload
 ## 17. Open Browser
 
 Visit:
-
-```for Swagger UI
+for Swagger UI
+```
 http://127.0.0.1:8000/docs
 ```
 
-```for summaries UI and download links 
+for summaries UI and download links 
+```
 http://127.0.0.1:8000/
 ```
----
-
-# Features
-
-* Google Drive Integration
-* PDF/DOCX/TXT Parsing
-* Gemini AI Summarization
-* Styled HTML Table
-* CSV Export
-* PDF Export
-* Google Drive File Links
